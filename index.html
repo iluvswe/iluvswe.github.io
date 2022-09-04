@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dice.css" />
+    <title>Casino Dice Roll Game</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="cube">
+            <div class="front">
+                <center><span>MODULE 1 PROJECT</span></center></div>
+            <div class="back">
+                <center><span></span></center></div>
+            <div class="top">
+                <center><span></span></center></div>
+            <div class="left">
+                <center><span>ROLL THE DICE!</span></center></div>
+            <div class="right">
+                <center><span>LET'S PLAY</span></center></div>
+            <div class="bottom"></div>
+        </div>
+    </div>
+
+<div class="main-container">
+      <div class="box-for-player active">
+        <div class="participant" id="player">PLAYER</div>
+        <div class="score" id="p-score">0</div>
+        <div class="gradient-box">
+          <div class="active-turn">Current</div>
+          <div class="new-score" id="playerstatus">0</div>
+        </div>
+      </div>
+
+      <div class="box-for-dealer">
+        <div class="participant" id="dealer">DEALER</div>
+        <div class="score" id="d-score">0</div>
+        <div class="gradient-box">
+          <div class="active-turn">Current</div>
+          <div class="new-score" id="dealerstatus">0</div>
+        </div>
+        
+</div>
+      <button class="newGame">Click Here To Start Over</button>
+      <button class="rollButton">Roll The Dice!</button>
+      <button class="addButton">Add Points To Current Score</button>
+      <img src="red.jpg" class="rollingdice" />
+</div>
+
+    <div class="container-two">
+        <div class="cube-two">
+            <div class="front-two">
+                <center><span>MODULE 1 PROJECT</span></center>
+            </div>
+            <div class="back-two">
+                <center><span></span></div></center>
+            <div class="top-two">
+                <center><span></span></center>
+                
+            </div>
+            <div class="left-two">
+                <center><span>ROLL THE DICE!</span></center>
+            </div>
+            <div class="right-two">
+                <center><span></span>LET'S PLAY</center>
+            </div>
+            <div class="bottom-two"></div>
+        </div>
+    </div>
+
+  <div id="custom-modal" class="modal">
+
+    <div class="confetti-box">
+      <div class="confetti"><img src="happyface.jpg" width="100" height="100"></div>
+      <div class="confetti"></div>
+      <div class="confetti"><img src="happyface.jpg" width="100" height="100"></div>
+      <div class="confetti"></div>
+      <div class="confetti"><img src="happyface.jpg" width="100" height="100"></div>
+      <div class="confetti"></div>
+      <div class="confetti"><img src="happyface.jpg" width="100" height="100"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+  </div>
+
+<div class="modal-box">
+
+  <div class="x-out">&times;</div>
+    <p>CONGRATS! YOU WIN!</p>
+    </div>
+</div>
+
+<div id="dealer-modal" class="lose-modal">
+
+  <div class="emoiji-box">
+    <div class="emoiji"><img src="sadface.jpg" width="100" height="100"></div>
+    <div class="emoiji"><img src="sadface.jpg" width="100" height="100"></div>
+    <div class="emoiji"><img src="sadface.jpg" width="100" height="100"></div>
+    <div class="emoiji"><img src="sadface.jpg" width="100" height="100"></div>
+  </div>
+
+<div class="dealer-modal-box">
+
+  <div class="close-box">&times;</div>
+    <p>Aw Man, Dealer Wins! &#128546;</p>
+    </div>
+</div>
+
+<script src="dice.js"></script>
+  </body>
+</html>

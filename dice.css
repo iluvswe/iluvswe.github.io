@@ -1,0 +1,599 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(dice.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
+
+/* Black Dice on Lefthand side of Page */
+.container{
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    height: 20vh;
+    width: 10vh;
+} 
+
+.container .cube{
+    position: relative;
+    left: 40%;
+    top: 60%;
+    height: 200px;
+    width: 200px;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    transform: rotateX(135deg) rotateY(-217deg) rotateZ(-88deg);
+    animation: rotate 8s linear;
+    animation-iteration-count: infinite;
+}
+
+.container .cube div{
+    position: absolute;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    border:1px solid black;
+    color: #fff;
+}
+
+.container .cube .front{
+    background: url(black1.jpg);
+    background-size: cover;
+    transform: translateZ(200px);
+}
+
+.container .cube .back{
+    background: url(black2.jpg);
+    background-size: cover;
+    transform: translateZ(-100) rotateY(180deg);
+}
+
+.container .cube .right{
+    background: url(black3.jpg);
+    background-size: cover;
+    transform-origin: top right;
+    transform: rotateY(-270deg); translateX(100px);
+}
+
+.container .cube .left{
+    background: url(black4.jpg);
+    background-size: cover;
+    transform-origin: center left;
+    transform: rotateY(270deg); translateX(-100px);
+}
+
+.container .cube .top{
+    background: url(black5.jpg);
+    background-size: cover;
+    transform-origin: top center;
+    transform: rotateX(-270deg); translateY(-100px);
+}
+
+.container .cube .bottom{
+    background: url(black6.jpg);
+    background-size: cover;
+    transform-origin: bottom center;
+    transform: rotateX(270deg); translateY(100px);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    50%{
+        transform: rotateX(126deg) rotateY(127deg) rotateZ(245deg); 
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); 
+
+    }
+}
+
+/* The Box containing the actual game */
+.main-container {
+    width: 675px;
+    height: 575px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    border: solid white;
+    border-radius: 20px;
+    color: white;
+}
+
+.box-for-player,
+.box-for-dealer {
+    width: 50%;
+    height: 600px;
+    padding: 100px;
+    float: left;
+}
+
+.participant {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.participant:hover {
+    font-weight: 600;
+}
+
+.score {
+    text-align: center;
+    font-size: 80px;
+    font-weight: 100;
+    color: #EB4D4D;
+    margin-bottom: 130px;
+}
+
+.score:hover { 
+    font-weight: 600; 
+}
+
+.active {
+    height: 575px; 
+    background: pink;
+    border: dashed;
+    border-color: white;
+    border-radius: 20px;
+
+    background: linear-gradient(-45deg, green, pink, black);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+
+    position: relative;
+    --border-width: 15px;
+    border-radius: var(--border-width);
+}
+
+.active::before {
+  position: absolute;
+  content: "";
+  top: calc(-1 * var(--border-width));
+  left: calc(-1 * var(--border-width));
+  z-index: -1;
+  width: calc(100% + var(--border-width) * 2);
+  height: calc(100% + var(--border-width) * 2);
+  background: linear-gradient(60deg, red, white);
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  border-radius: calc(2 * var(--border-width));
+  animation: moveGradient 2s infinite;
+}
+
+@keyframes moveGradient {
+50% {
+  background-position: 100% 50%;
+}
+}
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.active .participant:hover { 
+    font-weight: 600; 
+}
+
+.active .participant::after {
+    content: "Gets To Roll Now";
+    font-size: 20px;
+    position: absolute;
+    color: blue;
+    top: 40px;
+    right: -80px;
+}
+
+.gradient-box {
+    background: url(dice.jpg);
+    color: black;
+    width: 80%;
+    margin: 0 auto;
+    padding: 12px;
+    text-align: center;
+    border-radius: 20px;
+    position: relative;
+}
+
+.active-turn {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.new-score {
+    font-size: 50px;
+}
+
+.rollingdice {
+    border: white solid;
+}
+
+button {
+    position: absolute;
+    width: 150px;
+    height: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: yellow;
+    background: url(stars.jpg);
+    border-color: yellow;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+button:hover { font-weight: 600; }
+button:hover i { margin-right: 20px; }
+
+.newGame {
+    font-size: 40px; 
+    width: 200px;
+    height: 200px;
+    left: -170px;
+    bottom: -2px;
+    border-radius: 20px;
+}
+
+.rollButton { 
+    top: 380px;
+    border-radius: 50%;
+}
+
+.addButton { 
+    top: 466px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.rollingdice {
+    position: absolute;
+    left: 50%;
+    top: 210px;
+    transform: translateX(-50%);
+    height: 100px;
+    border-radius: 10px;
+}
+
+/* SECOND DICE: red on the bottom righthand side of page */
+
+.container-two .cube-two{
+    position: absolute;
+    right: 80px;
+    bottom: 100px;
+    height: 200px;
+    width: 200px;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    transform: rotateX(135deg) rotateY(-217deg) rotateZ(-88deg);
+    animation: rotate 10s linear;
+    animation-iteration-count: infinite;
+    border: none;
+}
+
+.container-two .cube-two div{
+    position: absolute;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    border:1px solid red;
+    color: #fff;
+}
+
+.container-two .cube-two .front-two{
+    background: url(red1.jpg);
+    transform: translateZ(200px);
+}
+
+.container-two .cube-two .back-two{
+    background: url(red2.jpg);
+    transform: translateZ(-100) rotateY(180deg);
+}
+
+.container-two .cube-two .right-two{
+    background: url(red3.jpg);
+    transform-origin: top right;
+    transform: rotateY(-270deg); translateX(100px);
+}
+
+.container-two .cube-two .left-two{
+    background: url(red4.jpg);
+    transform-origin: center left;
+    transform: rotateY(270deg); translateX(-100px);
+}
+
+.container-two .cube-two .top-two{
+    background: url(red5.jpg);
+    transform-origin: top center;
+    transform: rotateX(-270deg); translateY(-100px);
+}
+
+.container-two .cube-two .bottom-two{
+    background: url(red6.jpg);
+    transform-origin: bottom center;
+    transform: rotateX(270deg); translateY(100px);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    50%{
+        transform: rotateX(126deg) rotateY(127deg) rotateZ(245deg); 
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); 
+
+    }
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    left: 250px;
+    top: 100px;
+    z-index: 1; 
+}
+
+.modal-box {
+    background: url(prettygalaxy.jpg);
+    border: 5px solid white;
+    font-size: 80px;
+    text-align: center;
+    width: 900px;
+    height: 200px;
+    border-radius: 10px;
+    color: white;
+    --border-width: 15px;
+    border-radius: var(--border-width);
+    animation: moveIt 2s linear infinite;
+}
+
+@keyframes moveIt {
+    from {background-position: left top;}
+    to {background-position: bottom right;}
+}
+/* The moveIt keyframes are for making the background animated/
+move from top left to bottom right */
+
+.modal-box::before {
+  position: absolute;
+  content: "";
+  top: calc(-1 * var(--border-width));
+  left: calc(-1 * var(--border-width));
+  z-index: -1;
+  width: calc(100% + var(--border-width) * 2);
+  height: calc(100% + var(--border-width) * 2);
+  background: linear-gradient(60deg, blue, white);
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  border-radius: calc(2 * var(--border-width));
+  animation: moveGradient 1s infinite;
+}
+
+@keyframes moveGradient {
+50% {
+  background-position: 100% 50%;
+}
+}
+/*Above is the animation for the border around the
+modal box */
+
+.modal-box:hover { 
+    font-weight: 600; 
+}
+
+.x-out {
+    color: yellow;
+    border: black;
+    border: solid;
+    float: right;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  
+.x-out:hover,
+.x-out:focus {
+    color: black;
+    background-color: yellow;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.confetti-box {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    border-radius: 50px;
+}
+
+.confetti {
+width: 15px;
+height: 15px;
+background-color: #f2d74e;
+position: absolute;
+left: 50%;
+animation: confetti 4s ease-in-out -1s infinite;
+transform-origin: left top;
+}
+
+.confetti:nth-child(1) {
+background-color: #f2d74e; left: 10%; animation-delay: 0;
+}
+.confetti:nth-child(2) {
+background-color: #95c3de; left: 20%; animation-delay: -5s;
+}
+.confetti:nth-child(3) {
+background-color: #ff9a91; left: 30%; animation-delay: -3s;
+}
+.confetti:nth-child(4) {
+background-color: #f2d74e; left: 40%; animation-delay: -2.5s;
+}
+.confetti:nth-child(5) {
+background-color: #95c3de; left: 50%; animation-delay: -4s;
+}
+.confetti:nth-child(6) {
+background-color: #ff9a91; left: 60%; animation-delay: -6s;
+}
+.confetti:nth-child(7) {
+background-color: #f2d74e; left: 70%; animation-delay: -1.5s;
+}
+.confetti:nth-child(8) {
+background-color: #95c3de; left: 80%; animation-delay: -2s;
+}
+.confetti:nth-child(9) {
+background-color: #ff9a91; left: 90%; animation-delay: -3.5s;
+}
+.confetti:nth-child(10) {
+background-color: #f2d74e; left: 100%; animation-delay: -2.5s;
+}
+
+@keyframes confetti {
+0% { transform: rotateZ(15deg) rotateY(0deg) translate(0,0); }
+25% { transform: rotateZ(5deg) rotateY(360deg) translate(-5vw,20vh); }
+50% { transform: rotateZ(15deg) rotateY(720deg) translate(5vw,60vh); }
+75% { transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw,80vh); }
+100% { transform: rotateZ(15deg) rotateY(1440deg) translate(10vw,110vh); }
+}
+
+.lose-modal {
+    display: none; 
+    position: fixed;
+    left: 250px;
+    top: 100px;
+    z-index: 1; 
+}
+/* This animation will create a colorful gradient border */
+.lose-modal:before, .lose-modal:after {
+	content: '';
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	background: linear-gradient(45deg, #fb0094, #0000ff,
+     #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000);
+	background-size: 400%;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	z-index: -1;
+    border-radius: 10px;
+	animation: steam 10s linear infinite;
+}
+
+@keyframes steam {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.lose-modal:after {
+	filter: blur(50px);
+}
+
+.dealer-modal-box {
+    border: 6px solid black;
+    font-size: 80px;
+    text-align: center;
+    width: 900px;
+    height: 200px;
+    border-radius: 10px;
+    color: white;
+
+    background: url(nightsky.jpg);
+    --border-width: 15px;
+    border-radius: var(--border-width);
+    animation: moveIt 10s linear infinite;
+}
+
+@keyframes moveIt {
+    from {background-position: bottom right;}
+    to {background-position: top left;}
+}
+
+.dealer-modal-box:hover { 
+    font-weight: 600; 
+}
+
+.close-box {
+    color: yellow;
+    border: black;
+    border: solid;
+    float: right;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  
+.close-box:hover,
+.close-box:focus {
+    color: black;
+    background-color: yellow;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.emoiji-box {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    border-radius: 50%;
+}
+.emoiji {
+width: 15px;
+height: 15px;
+position: absolute;
+left: 50%;
+animation: confetti 4s ease-in-out -4s infinite;
+transform-origin: left top;
+}
+
+.emoiji:nth-child(1) {
+    left: 10%; animation-delay: 0;
+}
+.emoiji:nth-child(2) {
+    left: 30%; animation-delay: -0.5s;
+}
+.emoiji:nth-child(3) {
+    left: 75%; animation-delay: -1s;
+}
+.emoiji:nth-child(4) {
+    left: 50%; animation-delay: -0.5s;
+}
+       
+@keyframes confetti {
+    0% { transform: rotateZ(15deg) rotateY(0deg) translate(0,0); }
+    25% { transform: rotateZ(5deg) rotateY(360deg) translate(-5vw,20vh); }
+    50% { transform: rotateZ(15deg) rotateY(720deg) translate(5vw,60vh); }
+    75% { transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw,80vh); }
+    100% { transform: rotateZ(15deg) rotateY(1440deg) translate(10vw,110vh); }
+}
+
+
