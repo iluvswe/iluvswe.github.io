@@ -13,3 +13,5 @@ RULES OF THE GAME:
 4. To save points to your official score (red color), simply click "Add Points To Current Score". If not, you may lose all unsaved points if you roll a 1 on the dice. Keep in mind that, however, each time you click that button, the turn then goes to the dealer and vice versa.
 5. In order to win, Player or Dealer has to get a total of 20 points saved before the other person.
 6. Game will automatically reset after there is a winner, or to begin a new game, click the button "Click Here To Start Over".
+
+![djce](https://media.giphy.com/media/l46CbPpL3szntVNhS/giphy.gif)
