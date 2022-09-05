@@ -5,6 +5,7 @@
 ![monkey](https://media3.giphy.com/media/H5C8CevNMbpBqNqFjl/giphy.gif?cid=ecf05e477r9l54ms46z4pjalbhijc2g5388piy98295lhcu4&rid=giphy.gif&ct=g)
 
 MODULE 1 PROJECT: ROLL THE DICE GAME BY LANA
+direct link to game: https://iluvswe.github.io
 
 RULES OF THE GAME:
 1. Player (You) gets to go first, before Dealer. Click "Roll The Dice" to begin the game.
