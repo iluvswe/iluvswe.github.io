@@ -130,7 +130,7 @@ body {
 
 .score {
     text-align: center;
-    font-size: 80px;
+    font-size: 100px;
     font-weight: 100;
     color: #EB4D4D;
     margin-bottom: 130px;
@@ -214,13 +214,13 @@ body {
 }
 
 .active-turn {
-    margin-bottom: 10px;
-    font-size: 20px;
-    color: white;
+    font-size: 22px;
+    color: black;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .new-score {
-    font-size: 50px;
+    font-size: 55px;
 }
 
 .rollingdice {
@@ -278,7 +278,7 @@ button:hover i { margin-right: 20px; }
 .container-two .cube-two{
     position: absolute;
     right: 80px;
-    bottom: 100px;
+    bottom: 50px;
     height: 200px;
     width: 200px;
     transform-style: preserve-3d;
@@ -484,7 +484,7 @@ background-color: #f2d74e; left: 100%; animation-delay: -2.5s;
     top: 100px;
     z-index: 1; 
 }
-/* This animation will create a colorful gradient border */
+/* This animation will create a colorful gradient border for the dealer modal*/
 .lose-modal:before, .lose-modal:after {
 	content: '';
 	position: absolute;
@@ -596,4 +596,55 @@ transform-origin: left top;
     100% { transform: rotateZ(15deg) rotateY(1440deg) translate(10vw,110vh); }
 }
 
+/*Box for Rules of the Game */
+.block {
+    position: absolute;
+    color: white;
+    text-align: justify;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    right: 0px;
+    top: 0px;
+    width: 320px;
+    height: 390px;
+    background: url(gifdice.gif);
+}
 
+.block:before, .block:after {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: -2px;
+    background: linear-gradient(45deg, black, black, yellow,#ffff00, black, black, 
+      black, black,#ffff00, black);
+    background-size: 1000%;
+    width: calc(100% + 5px);
+    height: calc(100% + 8px);
+    z-index: -1;
+    animation: steam 30s linear infinite;
+  }
+  
+  @keyframes steam {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .block:after {
+    filter: blur(50px);
+  }
+
+
+
+
+
+
+
+
+  
