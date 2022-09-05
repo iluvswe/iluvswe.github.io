@@ -1,5 +1,9 @@
 # iluvswe.github.io
 
+## WELCOME TO MY PAGE!
+
+![monkey](https://media3.giphy.com/media/H5C8CevNMbpBqNqFjl/giphy.gif?cid=ecf05e477r9l54ms46z4pjalbhijc2g5388piy98295lhcu4&rid=giphy.gif&ct=g)
+
 MODULE 1 PROJECT: ROLL THE DICE GAME BY LANA
 
 RULES OF THE GAME:
