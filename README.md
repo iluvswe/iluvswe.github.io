@@ -1,6 +1,6 @@
 # iluvswe.github.io
 
-MODULES 1 PROJECT: ROLL THE DICE GAME BY LANA
+MODULE 1 PROJECT: ROLL THE DICE GAME BY LANA
 
 RULES OF THE GAME:
 1. Player (You) gets to go first, before Dealer. Click "Roll The Dice" to begin the game.
