@@ -19,4 +19,4 @@ RULES OF THE GAME:
 
 ![djce](https://media.giphy.com/media/l46CbPpL3szntVNhS/giphy.gif)
 
-Technologies Used: HTML, CSS, JS, Git/Github
+Technologies Used: HTML, CSS, JS, Git/Github, VSCode
