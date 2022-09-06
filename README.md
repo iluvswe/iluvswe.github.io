@@ -18,3 +18,5 @@ RULES OF THE GAME:
 6. Game will automatically reset after there is a winner, or to begin a new game, click the button "Click Here To Start Over".
 
 ![djce](https://media.giphy.com/media/l46CbPpL3szntVNhS/giphy.gif)
+
+Technologies Used: HTML, CSS, JS, Git/Github
